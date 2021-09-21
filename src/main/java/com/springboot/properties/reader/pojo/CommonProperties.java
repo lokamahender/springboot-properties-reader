@@ -2,9 +2,11 @@ package com.springboot.properties.reader.pojo;
 
 import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 /**
  * @author mahenderloka
@@ -39,8 +41,10 @@ public class CommonProperties {
     @Value("${custom.common.environment}")
     private String environment;
 
+    //server
+    // returns SERVER_NAME_NOT_FOUND as response if property is not found in configuration
 
-    @Value("${server.common.serverName}")
+    @Value("${server.common.serverName: SERVER_NAME_NOT_FOUND}")
     private String serverName;
 
     @Value("${server.common.ipAddress}")
@@ -48,5 +52,12 @@ public class CommonProperties {
 
     @Value("${server.common.ipAddress}")
     private String active;
+
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertyConfigInDev() {
+        PropertySourcesPlaceholderConfigurer config = new PropertySourcesPlaceholderConfigurer();
+        config.setIgnoreResourceNotFound(true);
+        return config;
+    }
 
 }
