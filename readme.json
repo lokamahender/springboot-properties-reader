@@ -24,3 +24,31 @@ Response:
 "userName": "faker",
 "databaseUrl": "https://fakerapi.com/"
 }
+
+
+updated
+GET: http://localhost:8080/project/properties/getProperties
+
+Response:
+
+{
+"password": "amazon",
+"environment": "test",
+"connectionStringDetails": {
+"password": "password",
+"userName": "user",
+"url": "https://myhostname/testdb",
+"status": "active"
+},
+"secretKey": "amazonKey",
+"timezone": "EST",
+"userName": "amazon",
+"databaseUrl": "https://amazon-rds-test.com/",
+"supportedTimezones": [
+"EST",
+"CST",
+"PST",
+"MST",
+"IST"
+]
+}
