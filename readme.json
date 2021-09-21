@@ -1,1 +1,26 @@
-GET: http://localhost:8080//project/properties/getCommonProperties
+GET: http://localhost:8080/project/properties/getProperties
+
+Response:
+
+{
+"password": "amazon",
+"environment": "test",
+"secretKey": "amazonKey",
+"userName": "amazon",
+"databaseUrl": "https://amazon-rds-test.com/"
+}
+
+GET: http://localhost:8080//project/properties/getAllProperties
+
+Response:
+
+{
+"password": "faker",
+"environment": "test-faker",
+"secretKey": "fakerKey",
+"ipAddress": "127.00.0.0",
+"serverName": " SERVER_NAME_NOT_FOUND",
+"active": "127.00.0.0",
+"userName": "faker",
+"databaseUrl": "https://fakerapi.com/"
+}
